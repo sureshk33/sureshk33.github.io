@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website of Suresh, showcasing projects in web development, design, and more.">
+    <title> Home - Suresh Portfolio </title>
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    <link rel="shortcut icon" href="assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/icons/android-chrome-512x512.png">
+
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- FONTS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+
+    <!-- ICONS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.0/jquery.ripples.min.js"></script>
+    <script>
+        $(window).on('load', function () {
+            try {
+                $('.hero').ripples({
+                    resolution: 512,
+                    dropRadius: 20,
+                    perturbance: 0.04,
+                    interactive: true
+                });
+            } catch (e) {
+                console.warn('Ripples failed to initialize:', e);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Popup Modal -->
+    <!-- <div class="modal fade" id="myPopup" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Welcome to my Portfolio </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <p class="mb-0">This is a popup loaded.</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Auto-Show Modal On Page Load -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var popupModal = new bootstrap.Modal(document.getElementById('myPopup'));
+            popupModal.show();
+        });
+    </script>
+
+    <header class="sticky-lg-top" data-controller="sticky-nav">
+        <div class="menu__bar" data-controller="menubar-height">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu" aria-controls="primaryMenu" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="primaryMenu" aria-labelledby="primaryMenuLabel">
+                        <div class="offcanvas-header">
+                            <img src="assets/images/logo.png" width="100" style="mix-blend-mode:darken">
+
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body column-gap-3" data-sticky-nav-target="offcanvasBody">
+
+                            <ul class="navbar-nav flex-grow-1 flex-wrap position-relative justify-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="./">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./#about" class="nav-link">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./#education" class="nav-link">Education </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./#skills" class="nav-link">Skills </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./#contact" class="nav-link">Contact Us </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            const header = document.querySelector(".menu__bar");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+    <!-- HERO -->
+    <section class="sc_py hero st-ripple-version">
+        <div class="container">
+            <div class="row justify-content-center row-gap-4">
+                <div class="col-12 col-lg-2" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="hstack flex-wrap column-gap-3 justify-content-center">
+                        <img src="assets/images/suresh.jpg" class="logo rounded-circle " alt="">
+                    </div>
+                </div>
+                <div class="col-12" data-aos="fade-up" data-aos-duration="1400">
+                    <div class="text-center d-flex flex-column align-items-center justify-content-center gap-3">
+                        <h1 class="text-center d-inline-block position-relative hero-title animate-title"> Suresh K </h1>
+                        <h3 class="">Frontend Web Developer</h3>
+                        <p class=" mb-4 hero-text mx-auto">Crafting engaging and responsive web experiences with a <br> focus on modern design and seamless user interaction.</p>
+                        <a class=" btn btn-icon" href="assets/pdf/Suresh-Resume.pdf" target="_blank">Download Resume <span class="right-icon"><i class="bi bi-chevron-right"></i></span></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="ul-2-banner-socials ul-banner-socials">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+        </div>
+        <div class="bubbles d-lg-block d-none">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about__section sc_py" id="about">
+        <div class="container">
+            <h2 class="section-title-alt mb-5 text-center animate-title">About Me</h2>
+            <div class="row justify-content-center row-gap-4 align-items-center">
+                <div class="col-12 col-lg-3">
+                    <div class="about__info">
+                        <div class="about__thumb">
+                            <img src="assets/images/about.webp" alt="">
+                        </div>
+                        <div class="about__text">
+                            <span>03</span>
+                            <p>
+                                Years <br> Of Working <br> Experience
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="ps-lg-5">
+                        <div class=""><span class="about__subtitle"> <b><img src="assets/images/abstract/hand.png" class="ring__effect me-3" alt=""></b> Hello There!</span></div>
+                        <h2 class="text-heading mt-2 mb-4">I'm Suresh<span class="d-block text-heading-2 color-secondary">I am a Frontend Web Developer</span></h2>
+                        <p class="mb-4 opacity-75">Frontend Web Developer with professional experience since August 2023 in designing and developing responsive web applications. Proficient in HTML, CSS, JavaScript, Bootstrap, and modern UI development. Strong team player with good problem-solving skills and a passion for learning new web technologies.</p>
+                        <a class="btn btn-icon" href="mailto:sureshkumaresan33@gmail.com">Let's Talk <span class="right-icon"><i class="bi bi-envelope-fill"></i></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="education__section sc_py" id="education">
+        <div class="container">
+            <div class="row justify-content-center row-gap-4">
+                <div class="col-12 col-lg-6">
+                    <h2 class="section-title-alt text-title mb-4 animate-title">Education</h2>
+                    <ul class="timeline">
+                        <li>
+                            <div class="date">2021 – 2023</div>
+                            <h3>M.Sc. Computer Science</h3>
+                            <p>Dr.SNS Rajalakshmi College of Arts and Science</p>
+                        </li>
+
+                        <li>
+                            <div class="date">2018 – 2021</div>
+                            <h3>B.Sc. Computer Science</h3>
+                            <p>Dr.SNS Rajalakshmi College of Arts and Science</p>
+                        </li>
+
+                        <li>
+                            <div class="date">2018</div>
+                            <h3>Higher Secondary Certificate (HSC)</h3>
+                            <p>State Board of Tamil Nadu</p>
+                        </li>
+
+                        <li>
+                            <div class="date">2016</div>
+                            <h3>Secondary School Leaving Certificate (SSLC)</h3>
+                            <p>State Board of Tamil Nadu</p>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2 class="section-title-alt text-title mb-4 animate-title">Experience</h2>
+                    <ul class="timeline">
+                        <li>
+                            <div class="date">Aug 2023 – Present (Currently Working)</div>
+                            <h3>Frontend Web Developer</h3>
+                            <p class="mb-4">Krithitechnologies | Coimbatore</p>
+                            <ul role="list" class="no-color">
+                                <li>Developed responsive web pages using HTML, CSS, PHP, JavaScript, and Bootstrap</li>
+                                <li>Converted UI designs into functional, user-friendly web interfaces</li>
+                                <li>Worked closely with backend team to integrate APIs</li>
+                                <li>Improved website performance and cross-browser compatibility</li>
+                                <li>Fixed UI bugs and enhanced user experience</li>
+                                <li>Used VS Code and Git for development and version control</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="skills__section sc_py" id="skills">
+        <div class="container skills__info">
+            <div class="">
+                <div class="row row-gap-4 align-items-center justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="skill__content">
+                            <div class="section-title">
+                                <span class="sub-title">My Skills</span>
+                                <h2 class="text-heading mt-2 mb-4">Turning Ideas Into <span class="d-block color-secondary">Clean & Functional Designs</span></h2>
+                                <p> I’m a front-end & UI developer with experience in building clean, responsive, and user-friendly websites. I combine modern web technologies with a strong design background to create seamless digital experiences. </p>
+                                <a class="btn btn-icon" href="./#about">Explore More <span class="right-icon"><i class="bi bi-chevron-right"></i></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="skill-items-wrap">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
+                                    <div class="skill__item">
+                                        <img src="assets/images/skills/html.png" alt="Skill">
+                                        <h6 class="my-3">HTML</h6><span class="percent">95%</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
+                                    <div class="skill__item">
+                                        <img src="assets/images/skills/css.png" alt="Skill">
+                                        <h6 class="my-3">CSS</h6><span class="percent">90%</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
+                                    <div class="skill__item">
+                                        <img src="assets/images/skills/js.png" alt="Skill">
+                                        <h6 class="my-3">Javascript</h6><span class="percent">93%</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
+                                    <div class="skill__item">
+                                        <img src="assets/images/skills/php.png" alt="Skill">
+                                        <h6 class="my-3">PHP</h6><span class="percent">95%</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
+                                    <div class="skill__item">
+                                        <img src="assets/images/skills/bootstrap.png" alt="Skill">
+                                        <h6 class="my-3">bootstrap</h6><span class="percent">95%</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
+                                    <div class="skill__item">
+                                        <img src="assets/images/skills/ps.png" alt="Skill">
+                                        <h6 class="my-3">Photoshop</h6><span class="percent">90%</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
+                                    <div class="skill__item">
+                                        <img src="assets/images/skills/ai.png" alt="Skill">
+                                        <h6 class="my-3">Illustator</h6><span class="percent">90%</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-4 col-6">
+                                    <div class="skill__item">
+                                        <img src="assets/images/skills/id.png" alt="Skill">
+                                        <h6 class="my-3">InDesign</h6><span class="percent">70%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section sc_py">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="mb-5">
+                        <span class="sub-title">Get in Touch</span>
+                        <h2 class="section-title-alt text-title animate-title">Let's Work Together</h2>
+                        <p class="mt-2">Feel free to reach out for collaborations or just a friendly hello 👋</p>
+                    </div>
+                    <div class="d-flex flex-wrap gap-4 mb-4">
+                        <div class=""><i class="bi bi-geo-alt-fill color-secondary text-title"></i></div>
+                        <div class="">
+                            <div class="h4">Address</div>
+                            <p class="text-lead">Dr. Alagapa Road,<br> Coimbatore,<br> Tamilnadu : 641012</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap gap-4">
+                        <div class=""><i class="bi bi-patch-plus-fill color-secondary text-title"></i></div>
+                        <div class="">
+                            <div class="h4">Phone & Email</div>
+                            <p class="text-lead"><a href="tel:9600480143">9600480143</a></p>
+                            <p class="text-lead"><a href="mailto:sureshkumaresan33@gmail.com">sureshkumaresan33@gmail.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+
+                    <form action="https://formsubmit.co/sureshkumaresan33@gmail.com" method="POST" class="contact-form shadow p-4 rounded-4">
+
+                        <!-- FormSubmit Settings -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New Message From Portfolio!">
+                        <input type="hidden" name="_template" value="table">
+
+                        <div class="mb-3">
+                            <label class="form-label">Your Name</label>
+                            <input type="text" name="name" class="form-control form-control-lg" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Your Email</label>
+                            <input type="email" name="email" class="form-control form-control-lg" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Your Message</label>
+                            <textarea name="message" class="form-control form-control-lg" rows="5" placeholder="Type your message..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                            Send Message <i class="bi bi-send ms-2"></i>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer data-controller="footer-height">
+        <div class="footer__container">
+            <div class="container">
+
+            </div>
+        </div>
+
+        <div class="footer__cpr py-2">
+            <div class="container">
+                <div class="row row-gap-2 align-items-center text-center">
+                    <div class="col-lg-12">
+                        <small>&copy; Suresh Portfolio. All Rights Reserved
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div>
+        <button type="button" class="scrollToTop" id="scrolltop" title="Scroll To Top"><i class="bi bi-arrow-up"></i></button>
+    </div>
+
+    <!-- <div class="cursor"></div>
+    <div class="cursor2"></div> -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</body>
+
+</html>
